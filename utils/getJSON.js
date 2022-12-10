@@ -4,7 +4,7 @@ const { getFileExtension } = require('./utils.js');
 function getJSON(file, filename) {
   const path = `${process.env.actions_path}/${file}`; // File path.
   const ext = getFileExtension(file);
-
+  if (file.includes("sub-logs") && !ext | ext != "json") return 3;
   if (!ext) return false; // If no file extension, return.
   if (ext != 'json') return false; // If file extension is not '.json' return.
   
